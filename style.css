@@ -1,43 +1,97 @@
-/* Add this at the beginning of your style.css file */
-
 /* Apply a semi-transparent background to the entire body for a "frosted glass" effect */
 body {
-    background-color: rgba(255, 255, 255, 0.8); /* White background with transparency */
-    backdrop-filter: blur(5px); /* Blur effect for content behind the body */
+    background: radial-gradient(circle, rgb(137, 237, 255) 33%, rgba(255, 255, 125, 1) 67%);
+    backdrop-filter: blur(5px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a modern font */
   }
   
   /* Style adjustments for the weather dashboard for a more modern look */
   .container-fluid {
     padding: 20px;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px;
   }
   
   /* Make the search area and forecast cards semi-transparent */
-  .col-md-3, .forecast-card {
-    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
-    backdrop-filter: blur(4px); /* Blur effect for content behind these elements */
-    border-radius: 8px; /* Rounded corners */
+  .col-md-3,
+  .forecast-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  /* Hover effect for search area and forecast cards */
+  .col-md-3:hover,
+  .forecast-card:hover {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque on hover */
   }
   
   /* Styling for the city list for better visibility over blurred background */
   #city-list .city-btn {
-    background-color: rgba(245, 245, 245, 0.7); /* Slightly less transparent for readability */
-    margin-bottom: 5px; /* Space between buttons */
+    background-color: rgba(245, 245, 245, 0.8);
+    margin-bottom: 5px;
     border: none;
-    border-radius: 4px; /* Rounded corners */
-    color: #333; /* Dark text for contrast */
+    border-radius: 4px;
+    color: #333;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  /* Hover effect for city buttons */
+  #city-list .city-btn:hover {
+    background-color: rgba(245, 245, 245, 0.9); /* Slightly more opaque on hover */
   }
   
   /* Enhance the visibility of the main content area */
   .col-md-9 {
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.6); /* Slightly more opaque for readability */
-    backdrop-filter: blur(3px); /* Mild blur effect */
-    border-radius: 8px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(3px);
+    border-radius: 8px;
   }
   
   /* Add some shadow for depth */
-  .header, .col-md-3, .col-md-9, .forecast-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  .header,
+  .col-md-3,
+  .col-md-9,
+  .forecast-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
+  /* Add some padding to the header */
+  .header {
+    padding: 10px;
+  }
+  
+  /* Style the search form */
+  #search-form {
+    margin-bottom: 10px;
+  }
+  
+  /* Style the search button */
+  #search-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  /* Hover effect for search button */
+  #search-button:hover {
+    background-color: #0056b3; /* Slightly darker on hover */
+  }
+  
+  /* Add some spacing and alignment to the forecast cards */
+  .forecast-card {
+    margin: 10px;
+    text-align: center;
+  }
+  
+  /* Style the weather icons */
+  .weather-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+  }
