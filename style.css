@@ -1,74 +1,123 @@
 /* Apply a semi-transparent background to the entire body for a "frosted glass" effect */
 body {
-    background: radial-gradient(circle, rgb(137, 237, 255) 33%, rgba(255, 255, 125, 1) 67%);
+    background-color: rgb(111, 199, 226);
     backdrop-filter: blur(5px);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Use a modern font */
-  }
+    animation: colorChangeAnimation 5s infinite alternate; /* Apply the animation */
+    position: relative; /* Add relative positioning to the body */
+}
+
+@keyframes colorChangeAnimation {
+    0% {
+        background-color: rgb(0, 0, 0);
+    }
+    50% {
+        background-color: rgb(65, 65, 65);
+    }
+    100% {
+        background-color: rgb(0, 0, 0);
+    }
+}
+
+/* Style the header for the weather dashboard */
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
+    backdrop-filter: blur(4px);
+    border-radius: 90px;
+    margin: 20px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
   
-  /* Style adjustments for the weather dashboard for a more modern look */
-  .container-fluid {
+.container-fluid {
     padding: 20px;
     border-radius: 8px;
-  }
-  
-  /* Make the search area and forecast cards semi-transparent */
-  .col-md-3,
-  .forecast-card {
-    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%; /* Span the entire width of the page */
+    height: 100vh; /* Span the entire height of the viewport */
+}
+
+
+.col-md-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(4px);
     border-radius: 8px;
     transition: background-color 0.3s ease; /* Add a smooth transition effect */
-  }
-  
-  /* Hover effect for search area and forecast cards */
-  .col-md-3:hover,
-  .forecast-card:hover {
+}
+/* Style adjustments for the weather dashboard for a more modern look */
+.col-md-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    border-radius: 30px;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+    margin-bottom: 20px; /* Add margin-bottom property */
+}
+
+/* Make the search area and forecast cards semi-transparent */
+.col-md-3,
+.forecast-card {
+    background-color: rgba(150, 90, 90, 0.8);
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Hover effect for search area and forecast cards */
+.col-md-3:hover,
+.forecast-card:hover {
     background-color: rgba(255, 255, 255, 0.8); /* Slightly more opaque on hover */
-  }
-  
-  /* Styling for the city list for better visibility over blurred background */
-  #city-list .city-btn {
-    background-color: rgba(245, 245, 245, 0.8);
+}
+
+/* Styling for the city list for better visibility over blurred background */
+#city-list .city-btn {
+    background-color: rgba(121, 121, 121, 0.7);
     margin-bottom: 5px;
     border: none;
     border-radius: 4px;
-    color: #333;
+    color: #ffffff;
     transition: background-color 0.3s ease; /* Add a smooth transition effect */
-  }
-  
-  /* Hover effect for city buttons */
-  #city-list .city-btn:hover {
-    background-color: rgba(245, 245, 245, 0.9); /* Slightly more opaque on hover */
-  }
-  
-  /* Enhance the visibility of the main content area */
-  .col-md-9 {
-    padding: 15px;
+}
+
+/* Hover effect for city buttons */
+#city-list .city-btn:hover {
+    background-color: rgba(90, 90, 90, 0.8); /* Slightly more opaque on hover */
+}
+
+/* Enhance the visibility of the main content area */
+.col-md-9 {
+    padding: 25px;
     background-color: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(3px);
-    border-radius: 8px;
-  }
-  
-  /* Add some shadow for depth */
-  .header,
-  .col-md-3,
-  .col-md-9,
-  .forecast-card {
+    border-radius: 80px;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* Add some shadow for depth */
+.header,
+.col-md-3,
+.col-md-9,
+.forecast-card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Add some padding to the header */
-  .header {
+}
+
+/* Add some padding to the header */
+.header {
     padding: 10px;
-  }
-  
-  /* Style the search form */
-  #search-form {
+}
+
+/* Style the search form */
+#search-form {
     margin-bottom: 10px;
-  }
-  
-  /* Style the search button */
-  #search-button {
+}
+
+/* Style the search button */
+#search-button {
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -76,22 +125,33 @@ body {
     padding: 5px 10px;
     cursor: pointer;
     transition: background-color 0.3s ease; /* Add a smooth transition effect */
-  }
-  
-  /* Hover effect for search button */
-  #search-button:hover {
+}
+
+/* Hover effect for search button */
+#search-button:hover {
     background-color: #0056b3; /* Slightly darker on hover */
-  }
-  
-  /* Add some spacing and alignment to the forecast cards */
-  .forecast-card {
+}
+
+/* Add some spacing and alignment to the forecast cards */
+.forecast-card {
     margin: 10px;
     text-align: center;
-  }
-  
-  /* Style the weather icons */
-  .weather-icon {
+}
+
+/* Style the weather icons */
+.weather-icon {
     width: 50px;
     height: 50px;
     margin: 0 auto;
-  }
+}
+
+/* Style the temperature */
+.temperature {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container-fluid {
+    padding: 20px;
+    border-radius: 8px;
+}
